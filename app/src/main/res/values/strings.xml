@@ -1,0 +1,85 @@
+<resources>
+    <string name="app_name">衡准公估</string>
+
+    <string name="WX_APP_ID">wxaa030c1c53a54bb2</string>
+    <string name="WX_APP_KEY">wxaa030c1c53a54bb2</string>
+    <string name="QQ_APP_ID">1106597119</string>
+    <string name="QQ_APP_KEY">848f526b415bf8e7940206e0f4d485d2</string>
+    <string name="SCHEME_QQ">tencent1106597119</string>
+
+
+
+    <string name="empty_no_data">没有请求到数据，点击重试。。。</string>
+    <string name="empty_network_error">网络错误，请重试</string>
+
+
+    <string name="version_update">版本更新</string>
+    <string name="version_update_message">发现新版本，是否立即下载更新？</string>
+    <string name="cancel">取消</string>
+    <string name="sure">确定</string>
+
+    <string name="common_save">保存</string>
+    <string name="register">注册</string>
+    <string name="register_now">立即注册</string>
+    <string name="forget_password">忘记密码?</string>
+    <string name="login">登 录</string>
+    <string name="registers">注册</string>
+    <string name="goto_login">快速登录</string>
+    <string name="goto_register">快速注册</string>
+    <string name="phone">手机号：</string>
+    <string name="password">密  码：</string>
+    <string name="setPassword">设置密码：</string>
+    <string name="register_getcode">获取验证码</string>
+    <string name="regist_finish">完成注册</string>
+    <string name="personal_head_Tv">头像</string>
+    <string name="setting_password">设置密码</string>
+    <string name="setting_password_success">设置成功</string>
+    <string name="findPassword">找回密码</string>
+
+
+    <string name="userIcon">头 像</string>
+    <string name="myname">名字</string>
+    <string name="idNumber">身份证号</string>
+    <string name="myEmail">电子邮箱</string>
+    <string name="myGroup">所属机构</string>
+    <string name="myQrcode">我的二维码</string>
+    <string name="mobile">手机号码</string>
+    <string name="update">版本更新</string>
+    <string name="logout">退出登录</string>
+
+    <string name="forgetpwd_tips">温馨提示：您好，欢迎您的使用！请仔细填写以下信息。</string>
+    <string name="phoneNum">手 机 号</string>
+    <string name="verificationCode">验 证 码</string>
+    <string name="setpwd">设置密码</string>
+    <string name="confirmpwd">确认密码</string>
+    <string name="name">姓 名</string>
+    <string name="yes">是</string>
+    <string name="no">否</string>
+
+    <string name="common_update_success">更新成功</string>
+    <string name="common_write_external_storage_permission">该相册需要赋予访问存储的权限,不开启将无法正常工作!</string>
+    <string name="common_cancel">取消</string>
+    <string name="common_positive">确定</string>
+    <string name="common_open_permission">开启权限</string>
+    <string name="common_picture_all">所有图片</string>
+    <string name="common_picture_preview">预览(%d)</string>
+    <string name="verification_code">验证码：</string>
+    <string name="confirmPwd">确认密码</string>
+
+
+
+
+    <string name="wxcircle">微信朋友圈</string>
+    <string name="wx">微信</string>
+    <string name="qq">QQ好友</string>
+    <string name="qzone">QQ空间</string>
+    <string name="wx_favorite">微信收藏</string>
+    <string name="message">短信</string>
+
+    <string name="no_network">暂时没有网络</string>
+    <string name="reload">重新加载</string>
+    <string name="no_data">没有数据</string>
+
+
+
+</resources>

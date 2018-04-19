@@ -1,0 +1,158 @@
+apply plugin: 'com.android.application'
+
+apply plugin: 'org.greenrobot.greendao'
+//签名：8586c6e0711be335dc955e97cd2d7a56
+android {
+    signingConfigs {
+        config {
+            keyAlias 'key0'
+            keyPassword '123123'
+            storeFile file('F:/companyCode/xingxiaobao2/xingxiaobao/xxb2.jks')
+            storePassword '123123'
+        }
+    }
+    compileSdkVersion 26
+    buildToolsVersion "26.0.2"
+    defaultConfig {
+        applicationId "com.jiajun.demo"
+        minSdkVersion 15
+        targetSdkVersion 26
+        versionCode 506
+        versionName "5.0.6"
+        testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+        /**
+         * 对Java8新语法的支持
+         * 如果强制支持Java8的话；会导致Java代码中动态设置的中文在运行中是乱码。
+         */
+//        jackOptions {
+//            enabled false
+//        }
+        vectorDrawables.useSupportLibrary = true
+        multiDexEnabled true
+        flavorDimensions "versionCode"
+        manifestPlaceholders = [
+                MTA_APPKEY : "注册应用的appkey",
+                MTA_CHANNEL: "android"
+        ]
+
+    }
+    /*打开dex增量编译
+//    这还是一个实验性的功能，但是还是推荐打开试试*/
+//    dexOptions {
+//        //使用增量模式构建
+//        incremental true
+//        //最大堆内存
+//        javaMaxHeapSize "8g"
+//        //是否支持大工程模式
+//        jumboMode = true
+//        //预编译
+//        preDexLibraries = true
+//        //线程数
+//        threadCount = 8
+//    }
+    greendao {
+        //数据库schema版本，也可以理解为数据库版本号
+        schemaVersion 1
+        //设置DaoMaster 、DaoSession、Dao包名
+        daoPackage 'com.jiajun.demo.greendao.db'
+        //设置DaoMaster 、DaoSession、Dao目录
+        targetGenDir 'src/main/java'
+        //设置生成单元测试目录
+        //targetGenDirTest
+        //设置自动生成单元测试用例
+        //generateTests
+    }
+    buildTypes {
+        debug {
+            buildConfigField 'boolean', 'PROXY', 'true'
+            buildConfigField 'String', 'API_HOST', '"http://www.baidu_test.com"'
+            signingConfig signingConfigs.config
+        }
+        release {
+            buildConfigField 'boolean', 'PROXY', 'false'
+//            buildConfigField 'String', 'API_HOST', '"https://example.com/v1/"'
+            buildConfigField 'String', 'API_HOST', '"http://www.baidu.com"'
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+            signingConfig signingConfigs.config
+        }
+    }
+    productFlavors {
+        tbxx {
+            applicationId "com.ysx.hzgg"
+            versionCode 1000
+            versionName "1.0.0"
+            manifestPlaceholders = [APP_NAME: "衡准公估"]
+            dimension "versionCode"
+            resValue "string", "versionName", "hzgg" }
+    }
+/**
+ * BaseRecycleViewAdapterHelper 2/1
+ */
+    allprojects {
+        repositories {
+            maven { url "https://jitpack.io" }
+            maven { url "https://dl.bintray.com/caijialib/caijiaLibray" }
+        }
+    }
+
+    repositories {
+        flatDir {
+            dirs 'libs'
+        }
+    }
+
+    dependencies {
+        compile fileTree(include: ['*.jar'], dir: 'libs')
+        androidTestCompile('com.android.support.test.espresso:espresso-core:2.2.2', {
+            exclude group: 'com.android.support', module: 'support-annotations'
+        })
+        //noinspection GradleCompatible
+        compile 'com.android.support:design:26.0.2'
+        compile 'com.google.code.gson:gson:2.7'
+        compile 'com.jakewharton:butterknife:8.4.0'
+        //    compile 'com.github.bumptech.glide:glide:3.7.0'
+        compile 'com.readystatesoftware.systembartint:systembartint:1.0.4'
+        compile 'de.hdodenhof:circleimageview:2.1.0'
+        compile 'com.squareup.okhttp3:okhttp:3.8.0'
+        compile 'com.squareup.retrofit2:retrofit:2.3.0'
+        compile 'com.squareup.retrofit2:converter-gson:2.1.0'
+        compile 'com.squareup.retrofit2:adapter-rxjava:2.1.0'
+        compile 'io.reactivex:rxjava:1.2.1'
+        compile 'io.reactivex:rxandroid:1.2.1'
+        compile 'com.jakewharton.rxbinding:rxbinding:0.4.0'
+        compile 'org.greenrobot:eventbus:3.0.0'
+        compile 'org.greenrobot:greendao:3.2.0'
+        compile 'com.facebook.stetho:stetho-okhttp3:1.5.0'
+        compile 'com.zhy:okhttputils:2.6.2'
+        compile 'com.caijia:looperRecyclerView:1.0'
+        compile 'com.caijia:selectPicture:1.1.3'
+        //recycleView适配器
+        compile 'com.github.CymChad:BaseRecyclerViewAdapterHelper:2.9.30'
+        compile 'com.orhanobut:logger:1.15'
+        compile 'com.github.hotchemi:permissionsdispatcher:2.1.3'
+        compile 'com.flaviofaria:kenburnsview:1.0.7'
+        compile 'com.umeng.analytics:analytics:latest.integration'
+        compile 'com.miguelcatalan:materialsearchview:1.4.0'
+        compile 'com.cleveroad:slidingtutorial:1.0.5'
+        compile 'com.android.support:percent:26.0.2'
+        compile 'com.qiyukf.unicorn:unicorn:3.1.0'
+        //日历
+        //    compile 'com.prolificinteractive:material-calendarview:1.4.3'
+        testCompile 'com.squareup.leakcanary:leakcanary-android-no-op:1.5'
+        debugCompile 'com.squareup.leakcanary:leakcanary-android:1.5'
+        releaseCompile 'com.squareup.leakcanary:leakcanary-android-no-op:1.5'
+        annotationProcessor 'com.jakewharton:butterknife-compiler:8.4.0'
+        annotationProcessor 'com.github.hotchemi:permissionsdispatcher-processor:2.1.3'
+        compile 'com.android.support:appcompat-v7:26.0.2'
+        compile 'com.android.support.constraint:constraint-layout:1.0.2'
+        testCompile 'junit:junit:4.12'
+        implementation files('libs/jsoup-1.9.2.jar')
+        compile files('libs/fastjson-1.1.46.android.jar')
+        //微信 QQ
+        compile 'com.tencent.mm.opensdk:wechat-sdk-android-without-mta:+'
+        implementation files('libs/open_sdk_r5923_lite.jar')
+//    compile "com.github.bumptech.glide:okhttp3-integration:4.0.0-RC1"
+        compile 'com.github.franmontiel:PersistentCookieJar:v1.0.1'
+    }
+}

@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical">
+
+    <FrameLayout
+        android:layout_width="110dp"
+        android:layout_height="110dp"
+        android:layout_gravity="center"
+        android:background="@drawable/common_dialog_progress_default_bg">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:text="清理成功"
+            android:drawablePadding="15dp"
+            android:drawableTop="@drawable/common_operation_success_iv"
+            android:textColor="@color/white"
+            android:textSize="15sp" />
+
+    </FrameLayout>
+</LinearLayout>
